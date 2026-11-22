@@ -16,5 +16,5 @@
   "requirements": [
     "pycomm3>=1.2.14,<2"
   ],
-  "version": "0.1.2"
+  "version": "0.1.3"
 }
