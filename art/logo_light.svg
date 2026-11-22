@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="768" height="256" viewBox="0 0 768 256">
+  <image x="0" y="0" width="256" height="256" xlink:href="../custom_components/rockwell_plc/brand/icon@2x.png"/>
+  <text x="270" y="122" font-family="DM Sans" font-weight="700" font-size="64" fill="#2c3240">Rockwell PLC</text>
+  <text x="272" y="168" font-family="DM Sans" font-weight="500" font-size="25" fill="#6a5fa8">for Allen-Bradley Logix &amp; SLC PLCs</text>
+</svg>

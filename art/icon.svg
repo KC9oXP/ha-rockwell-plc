@@ -1,0 +1,137 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" xmlns:c2pa="http://c2pa.org/manifest">
+  <defs>
+    <!-- pearlescent chassis: shifting white / lavender / mint / blush -->
+    <linearGradient id="pearl" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fdfbff"/>
+      <stop offset="0.2" stop-color="#d9ccff"/>
+      <stop offset="0.42" stop-color="#bff0e2"/>
+      <stop offset="0.64" stop-color="#ffcfe6"/>
+      <stop offset="0.84" stop-color="#cdd6ff"/>
+      <stop offset="1" stop-color="#b3a9e0"/>
+    </linearGradient>
+    <linearGradient id="pearlTop" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="0.4" stop-color="#eee8ff"/>
+      <stop offset="0.7" stop-color="#e4fbf4"/>
+      <stop offset="1" stop-color="#fdeef6"/>
+    </linearGradient>
+    <linearGradient id="pearlSide" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#c9c0ee"/>
+      <stop offset="0.5" stop-color="#b3d9d0"/>
+      <stop offset="1" stop-color="#a99fcf"/>
+    </linearGradient>
+    <!-- brushed metal module faces -->
+    <linearGradient id="metal" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#8d95a3"/>
+      <stop offset="0.18" stop-color="#e9edf3"/>
+      <stop offset="0.35" stop-color="#b4bcc8"/>
+      <stop offset="0.6" stop-color="#f7f9fc"/>
+      <stop offset="0.82" stop-color="#a7afbc"/>
+      <stop offset="1" stop-color="#6f7684"/>
+    </linearGradient>
+    <linearGradient id="metalDark" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#3b4150"/>
+      <stop offset="0.3" stop-color="#6b7486"/>
+      <stop offset="0.55" stop-color="#9aa3b5"/>
+      <stop offset="0.8" stop-color="#5a6274"/>
+      <stop offset="1" stop-color="#2f3442"/>
+    </linearGradient>
+    <linearGradient id="gloss" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.75"/>
+      <stop offset="0.45" stop-color="#ffffff" stop-opacity="0.08"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+    </linearGradient>
+    <radialGradient id="ledG" cx="0.35" cy="0.35" r="0.7">
+      <stop offset="0" stop-color="#eaffd9"/><stop offset="0.4" stop-color="#3dff6a"/><stop offset="1" stop-color="#0a8a2a"/>
+    </radialGradient>
+    <radialGradient id="ledA" cx="0.35" cy="0.35" r="0.7">
+      <stop offset="0" stop-color="#fff6d6"/><stop offset="0.4" stop-color="#ffb52e"/><stop offset="1" stop-color="#a35a00"/>
+    </radialGradient>
+    <radialGradient id="shadow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#000" stop-opacity="0.35"/><stop offset="1" stop-color="#000" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="soft" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="3" stdDeviation="3" flood-color="#2a2340" flood-opacity="0.35"/>
+    </filter>
+  </defs>
+
+  <!-- ground shadow -->
+  <ellipse cx="262" cy="452" rx="214" ry="26" fill="url(#shadow)"/>
+
+  <!-- chassis: top, side, front -->
+  <path d="M40 132 L72 100 L476 100 L444 132 Z" fill="url(#pearlTop)" stroke="#a79fd0" stroke-width="2"/>
+  <path d="M444 132 L476 100 L476 404 L444 436 Z" fill="url(#pearlSide)" stroke="#9b93c4" stroke-width="2"/>
+  <rect x="40" y="132" width="404" height="304" rx="14" fill="url(#pearl)" stroke="#9f97c8" stroke-width="2.5"/>
+  <rect x="40" y="132" width="404" height="120" rx="14" fill="url(#gloss)"/>
+
+  <!-- DIN-rail style base strip -->
+  <rect x="56" y="404" width="372" height="16" rx="4" fill="url(#metalDark)"/>
+
+  <!-- power supply module -->
+  <g filter="url(#soft)">
+    <rect x="60" y="152" width="74" height="244" rx="6" fill="url(#metalDark)" stroke="#232733" stroke-width="2"/>
+    <rect x="72" y="170" width="50" height="34" rx="4" fill="#1b1f29"/>
+    <circle cx="97" cy="187" r="8" fill="url(#ledG)"/>
+    <g fill="#1b1f29">
+      <rect x="72" y="226" width="50" height="5" rx="2"/><rect x="72" y="238" width="50" height="5" rx="2"/>
+      <rect x="72" y="250" width="50" height="5" rx="2"/><rect x="72" y="262" width="50" height="5" rx="2"/>
+      <rect x="72" y="274" width="50" height="5" rx="2"/>
+    </g>
+    <g fill="#c9ced8" stroke="#2a2f3b" stroke-width="2">
+      <circle cx="84" cy="340" r="7"/><circle cx="110" cy="340" r="7"/><circle cx="84" cy="368" r="7"/><circle cx="110" cy="368" r="7"/>
+    </g>
+  </g>
+
+  <!-- CPU module: wider, pearl-metal face, ladder rung, network port -->
+  <g filter="url(#soft)">
+    <rect x="142" y="152" width="112" height="244" rx="6" fill="url(#metal)" stroke="#4a5160" stroke-width="2"/>
+    <rect x="142" y="152" width="112" height="90" rx="6" fill="url(#gloss)"/>
+    <!-- status LEDs -->
+    <circle cx="162" cy="174" r="7" fill="url(#ledG)"/>
+    <circle cx="184" cy="174" r="7" fill="url(#ledG)"/>
+    <circle cx="206" cy="174" r="7" fill="url(#ledA)"/>
+    <circle cx="228" cy="174" r="7" fill="#5b6270" stroke="#3a404c" stroke-width="1.5"/>
+    <!-- engraved ladder rung: rails, NO contact, coil -->
+    <g stroke="#2c3240" stroke-width="4" stroke-linecap="round" fill="none">
+      <line x1="154" y1="206" x2="154" y2="290"/>
+      <line x1="242" y1="206" x2="242" y2="290"/>
+      <line x1="154" y1="248" x2="173" y2="248"/>
+      <line x1="173" y1="234" x2="173" y2="262" stroke-width="5"/>
+      <line x1="185" y1="234" x2="185" y2="262" stroke-width="5"/>
+      <line x1="185" y1="248" x2="203" y2="248"/>
+      <path d="M212 235 Q201 248 212 261"/>
+      <path d="M224 235 Q235 248 224 261"/>
+      <line x1="233" y1="248" x2="242" y2="248"/>
+    </g>
+    <!-- RJ45 port with link LED -->
+    <rect x="166" y="310" width="64" height="48" rx="5" fill="#1b1f29" stroke="#0f1218" stroke-width="2"/>
+    <path d="M178 322 h40 v22 h-8 v8 h-24 v-8 h-8 Z" fill="#2e3442"/>
+    <g fill="#c7a64a"><rect x="184" y="324" width="3" height="10"/><rect x="190" y="324" width="3" height="10"/><rect x="196" y="324" width="3" height="10"/><rect x="202" y="324" width="3" height="10"/><rect x="208" y="324" width="3" height="10"/></g>
+    <circle cx="176" cy="372" r="5" fill="url(#ledG)"/>
+    <circle cx="220" cy="372" r="5" fill="url(#ledA)"/>
+  </g>
+
+  <!-- three I/O modules with LED rows and terminal screws -->
+  <g id="io" filter="url(#soft)">
+    <rect x="262" y="152" width="50" height="244" rx="6" fill="url(#metal)" stroke="#4a5160" stroke-width="2"/>
+    <rect x="262" y="152" width="50" height="80" rx="6" fill="url(#gloss)"/>
+    <g>
+      <circle cx="278" cy="170" r="4.5" fill="url(#ledG)"/><circle cx="296" cy="170" r="4.5" fill="url(#ledG)"/>
+      <circle cx="278" cy="184" r="4.5" fill="#5b6270"/><circle cx="296" cy="184" r="4.5" fill="url(#ledG)"/>
+      <circle cx="278" cy="198" r="4.5" fill="url(#ledG)"/><circle cx="296" cy="198" r="4.5" fill="#5b6270"/>
+    </g>
+    <rect x="268" y="218" width="38" height="166" rx="4" fill="#20242e"/>
+    <g fill="#d3d8e1" stroke="#0f1218" stroke-width="1.5">
+      <circle cx="287" cy="234" r="5.5"/><circle cx="287" cy="256" r="5.5"/><circle cx="287" cy="278" r="5.5"/>
+      <circle cx="287" cy="300" r="5.5"/><circle cx="287" cy="322" r="5.5"/><circle cx="287" cy="344" r="5.5"/><circle cx="287" cy="366" r="5.5"/>
+    </g>
+  </g>
+  <use href="#io" x="56"/>
+  <use href="#io" x="112"/>
+
+  <!-- end cap -->
+  <rect x="430" y="152" width="8" height="244" rx="3" fill="url(#metalDark)"/>
+
+  <!-- pearlescent sheen sweep across the whole front -->
+  <path d="M40 300 C160 250 280 330 444 240 L444 270 C290 360 160 285 40 330 Z" fill="#ffffff" opacity="0.18"/>
+<metadata><c2pa:manifest>AAAWgmp1bWIAAAAeanVtZGMycGEAEQAQgAAAqgA4m3EDYzJwYQAAABZcanVtYgAAAEdqdW1kYzJtYQARABCAAACqADibcQN1cm46YzJwYTpkN2VhNjdhYy1mYzFjLTQ1MzAtYmY1OC1lZTlhZjgzMjZmNWEAAAADl2p1bWIAAAApanVtZGMyYXMAEQAQgAAAqgA4m3EDYzJwYS5hc3NlcnRpb25zAAAAALxqdW1iAAAARGp1bWRjYm9yABEAEIAAAKoAOJtxE2MycGEuaW5ncmVkaWVudC52MwAAAAAYYzJzaOD/Qltm7cVWx+cMBy3/3KYAAABwY2JvcqNpZGM6Zm9ybWF0bWltYWdlL3N2Zyt4bWxqaW5zdGFuY2VJRHgseG1wOmlpZDo1MGQxNjQ1YS05YTBhLTRiNjUtYjY2OS00NzJiYTFmMDQyNjJscmVsYXRpb25zaGlwaHBhcmVudE9mAAAB4mp1bWIAAABBanVtZGNib3IAEQAQgAAAqgA4m3ETYzJwYS5hY3Rpb25zLnYyAAAAABhjMnNof3qWK2jCGx2GApgBXnggFQAAAZljYm9yomdhY3Rpb25zgqJmYWN0aW9ua2MycGEub3BlbmVkanBhcmFtZXRlcnOha2luZ3JlZGllbnRzgaJjdXJseC1zZWxmI2p1bWJmPWMycGEuYXNzZXJ0aW9ucy9jMnBhLmluZ3JlZGllbnQudjNkaGFzaFggCk2/1NlwO8337pNkdSG+eQYsRs2D7qMEl/7fUKqApm2kZmFjdGlvbngdY29tLmFudGhyb3BpYy5jbGF1ZGUucHJvdmlkZWRqcGFyYW1ldGVyc6F4H2NvbS5hbnRocm9waWMub3JpZ2luLWNvbmZpZGVuY2VndW5rbm93bmtkZXNjcmlwdGlvbnhmQ2xhdWRlIHByb3ZpZGVkIHRoaXMgZmlsZSBhdCB0aGUgcmVxdWVzdCBvZiBhIHVzZXIgYW5kIG1heSBoYXZlIGNyZWF0ZWQgb3IgbW9kaWZpZWQgdGhlIGZpbGUgY29udGVudHMubXNvZnR3YXJlQWdlbnShZG5hbWVmQ2xhdWRlcmFsbEFjdGlvbnNJbmNsdWRlZPUAAADIanVtYgAAAEBqdW1kY2JvcgARABCAAACqADibcRNjMnBhLmhhc2guZGF0YQAAAAAYYzJzaPfutyICquB6G3tCP3n/0XIAAACAY2JvcqVjYWxnZnNoYTI1NmNwYWRMAAAAAAAAAAAAAAAAZGhhc2hYINzmrcr5KEmevb7ZXkqLLVV3ekRRZqarueWeas3xBZtOZG5hbWVuanVtYmYgbWFuaWZlc3RqZXhjbHVzaW9uc4GiZXN0YXJ0GR1sZmxlbmd0aBkeBAAAAj5qdW1iAAAAJ2p1bWRjMmNsABEAEIAAAKoAOJtxA2MycGEuY2xhaW0udjIAAAACD2Nib3KlY2FsZ2ZzaGEyNTZpc2lnbmF0dXJleE1zZWxmI2p1bWJmPS9jMnBhL3VybjpjMnBhOmQ3ZWE2N2FjLWZjMWMtNDUzMC1iZjU4LWVlOWFmODMyNmY1YS9jMnBhLnNpZ25hdHVyZWppbnN0YW5jZUlEeCx4bXA6aWlkOjIzZjNjZDAyLTA3ZWEtNDI0Ni1hMzM1LTQ2YTc1NmM3YTNkMnJjcmVhdGVkX2Fzc2VydGlvbnODomN1cmx4LXNlbGYjanVtYmY9YzJwYS5hc3NlcnRpb25zL2MycGEuaW5ncmVkaWVudC52M2RoYXNoWCAKTb/U2XA7zffuk2R1Ib55BixGzYPuowSX/t9QqoCmbaJjdXJseCpzZWxmI2p1bWJmPWMycGEuYXNzZXJ0aW9ucy9jMnBhLmFjdGlvbnMudjJkaGFzaFggiMDXgJl71Dovj//uv41wrVOS13gRTOQO6gYA0ECoI5uiY3VybHgpc2VsZiNqdW1iZj1jMnBhLmFzc2VydGlvbnMvYzJwYS5oYXNoLmRhdGFkaGFzaFggCeBaod6LnbWzu7B+qx79sivZPwnBDtOnv4E43EysQ5h0Y2xhaW1fZ2VuZXJhdG9yX2luZm+jZG5hbWVvQW50aHJvcGljIEZpbGVzZ3ZlcnNpb25lMS4wLjBrc3BlY1ZlcnNpb25lMi40LjAAABA4anVtYgAAAChqdW1kYzJjcwARABCAAACqADibcQNjMnBhLnNpZ25hdHVyZQAAABAIY2JvctKEWQISogEmGCFZAgowggIGMIIBjaADAgECAhRA5aAK7sI50L64g/oGQgU9Z1UTADAKBggqhkjOPQQDAzBJMRcwFQYDVQQKEw5BbnRocm9waWMsIFBCQzEuMCwGA1UEAxMlQW50aHJvcGljIENvbnRlbnQgQ3JlZGVudGlhbHMgUm9vdCBDQTAeFw0yNjA4MDcxODQzNTZaFw0yODA4MDYxOTQzNTZaMEQxFzAVBgNVBAoTDkFudGhyb3BpYywgUEJDMSkwJwYDVQQDEyBBbnRocm9waWMgQ2xhdWRlIENvbnRlbnQgU2lnbmluZzBZMBMGByqGSM49AgEGCCqGSM49AwEHA0IABJh6CmvLUBgFFNU0vUKlOVtE6djd17L5SuwX0LemFisBM3dkd/3cyjxFA3Qo5S46fX0/ihY0VZ7mfb9KF703t5OjWDBWMA4GA1UdDwEB/wQEAwIHgDAVBgNVHSUEDjAMBgorBgEEAYPoXgIBMAwGA1UdEwEB/wQCMAAwHwYDVR0jBBgwFoAUzlHiBIFOZFsj+OPEz5o+nMHXXMIwCgYIKoZIzj0EAwMDZwAwZAIwMXMdFJ4BetLLVY7ORuE9noqbbAZOZn/aArXyTwFAZfKrPzxF2vPoJNf1+UCdg1XGAjBwX1zd9WGqYkqmL5SFqw1QySjr1zJfpJM9+1rdDwSPLMOPOjKuiXjoU/pUUeG9RwmhY3BhZFkNngAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPZYQK498VgnF2oIWuVF200ZTsnnEPr5tyuYd7MhkUtszXpOlOD92Hs31LWhCr+Yb5n5XfLXUSRz+u8YQQ40kPK5haQ=</c2pa:manifest></metadata></svg>

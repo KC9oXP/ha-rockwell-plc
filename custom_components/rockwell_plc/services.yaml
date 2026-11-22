@@ -1,0 +1,30 @@
+write_tag:
+  fields:
+    config_entry_id:
+      required: true
+      selector:
+        config_entry:
+          integration: rockwell_plc
+    tag:
+      required: true
+      example: "HMI_Setpoint"
+      selector:
+        text:
+    value:
+      required: true
+      example: 42
+      selector:
+        object:
+
+read_tag:
+  fields:
+    config_entry_id:
+      required: true
+      selector:
+        config_entry:
+          integration: rockwell_plc
+    tag:
+      required: true
+      example: "Tank1_Level"
+      selector:
+        text:

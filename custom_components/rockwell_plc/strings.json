@@ -1,0 +1,77 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Connect to a Rockwell PLC",
+        "description": "Logix: enter the IP, adding /slot if the CPU isn't in slot 0 (e.g. 192.168.1.10/2) or a full route path. SLC/MicroLogix: enter the IP. {error}",
+        "data": {
+          "name": "Name",
+          "path": "IP address or route path",
+          "plc_type": "PLC family"
+        }
+      },
+      "options": {
+        "title": "Polling, writes and tags",
+        "description": "Writes are off by default. Switch, number and button tags are created as read-only sensors (or skipped, for buttons) until 'Allow writes' is on. {error}",
+        "data": {
+          "scan_interval": "Scan interval",
+          "allow_writes": "Allow writes from switch/number/button entities",
+          "allow_service_writes": "Allow write_tag service (writes ANY tag)",
+          "tags": "Tags (YAML list)"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Could not connect to the PLC.",
+      "invalid_tags": "The tag list is invalid. See the message above.",
+      "unknown": "Unexpected error. Check the Home Assistant log."
+    },
+    "abort": {
+      "already_configured": "This PLC is already configured."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Polling, writes and tags",
+        "description": "Writes are off by default. Switch, number and button tags are created as read-only sensors (or skipped, for buttons) until 'Allow writes' is on. {error}",
+        "data": {
+          "scan_interval": "Scan interval",
+          "allow_writes": "Allow writes from switch/number/button entities",
+          "allow_service_writes": "Allow write_tag service (writes ANY tag)",
+          "tags": "Tags (YAML list)"
+        }
+      }
+    },
+    "error": {
+      "invalid_tags": "The tag list is invalid. See the message above."
+    }
+  },
+  "selector": {
+    "plc_type": {
+      "options": {
+        "logix": "Logix 5000 (ControlLogix / CompactLogix / GuardLogix)",
+        "slc": "SLC 500 / MicroLogix (PCCC)"
+      }
+    }
+  },
+  "services": {
+    "write_tag": {
+      "name": "Write tag",
+      "description": "Write a value to any tag or address. Must be enabled per PLC in the integration options.",
+      "fields": {
+        "config_entry_id": {"name": "PLC", "description": "Which PLC to write to."},
+        "tag": {"name": "Tag", "description": "Logix tag name (e.g. Program:Main.Setpoint) or SLC address (e.g. N7:10, B3:0/5)."},
+        "value": {"name": "Value", "description": "Value to write. Number, true/false, text, or a list for arrays."}
+      }
+    },
+    "read_tag": {
+      "name": "Read tag",
+      "description": "Read one tag or address on demand and return its value.",
+      "fields": {
+        "config_entry_id": {"name": "PLC", "description": "Which PLC to read from."},
+        "tag": {"name": "Tag", "description": "Logix tag name or SLC address."}
+      }
+    }
+  }
+}
