@@ -13,7 +13,11 @@ Everything is local polling, and each scan reads all tags in one batched request
 
 ## Install
 
-**HACS:** HACS → ⋮ → Custom repositories → add this repo's URL, category *Integration* → download → restart HA.
+**HACS (recommended):** open HACS, search for **Rockwell PLC** → download → restart HA.
+
+[![Open your Home Assistant instance and open this repository in HACS.](https://my.home-assistant.io/badges/hacs_repository.svg)](https://my.home-assistant.io/redirect/hacs_repository/?owner=KC9OXP&repository=ha-rockwell-plc&category=integration)
+
+**HACS custom repository (fallback):** if it doesn't show up in search, HACS → ⋮ → Custom repositories → add this repo's URL, category *Integration* → download → restart HA.
 
 **Manual:** copy `custom_components/rockwell_plc` into `/config/custom_components/` → restart HA.
 
